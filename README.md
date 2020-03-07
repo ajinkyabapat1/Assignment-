@@ -1,4 +1,15 @@
-# FitnessTracker
+# Angular Crud Application
+
+
+# Author:- Ajinkya Bapat
+
+# Steps to run project:
+
+ #  After importing code base run following command
+ # 1. npm install
+ # 2. npm start
+ 
+ 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.4.
 

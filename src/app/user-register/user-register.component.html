@@ -1,0 +1,165 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h3 style="color:navy;text-align:center">Customer Registration Form</h3>
+    </div>
+  </div>
+  <div class="reglist">
+      <div class="row">
+          <div class="col-md-4">
+    <input
+      class="form-control"
+      type="text"
+      name="search"
+      [(ngModel)]="searchText"
+      autocomplete="off"
+      placeholder="Search Customer "
+      style="width: 6cm"
+    />
+</div>
+<div class="col-md-4">
+    <span> Number of Customer </span>
+    <select [(ngModel)]="rowsOnPage" style="border-radius: 5px; width: 80px;">
+      <option *ngFor="let row of rowsOnPageSet" [value]="row" >{{ row }}</option>
+    </select>
+</div>
+<div class="col-md-4">
+    <pagination-controls
+      id="listing_pagination"
+      maxSize=""
+      directionLinks="true"
+      (pageChange)="page = $event"
+    >
+    </pagination-controls>
+</div>
+</div>
+
+    <table class="table table-striped">
+      <thead style="color: #336600;">
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+
+          <th>Email</th>
+          <th>Mobile</th>
+
+          <th>Edit Entry</th>
+          <th>Delete Entry</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let registration of registrations
+              | paginate
+                : {
+                    id: 'listing_pagination',
+                    itemsPerPage: rowsOnPage,
+                    currentPage: page,
+                    totalItems: pagelength
+                  }
+              | filter: searchText;
+            let i = index
+          "
+        >
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ registration.firstName }}</td>
+          <td>{{ registration.lastName }}</td>
+
+          <td>{{ registration.email }}</td>
+          <td>{{ registration.mobile }}</td>
+          <td>
+            <button type="button" class="btn btn-info" (click)="onEdit(i)">
+              Edit
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-danger" (click)="onDelete(i)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="text-right">
+      <button type="submit" class="btn btn-primary" (click)="onNew()">
+        New
+      </button>
+    </div>
+  </div>
+  <br />
+  <div class="regentry" *ngIf="showNew">
+    <form (ngSubmit)="onSave()">
+      <div class="form-group row">
+        <label for="firstname-input" class="col-2 col-form-label"
+          >First Name</label
+        >
+        <div class="col-10">
+          <input
+            class="form-control"
+            type="text"
+            [(ngModel)]="regModel.firstName"
+            name="firstName"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="lastname-input" class="col-2 col-form-label"
+          >Last Name</label
+        >
+        <div class="col-10">
+          <input
+            class="form-control"
+            type="text"
+            [(ngModel)]="regModel.lastName"
+            name="lastName"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="example-email-input" class="col-2 col-form-label"
+          >Email</label
+        >
+        <div class="col-10">
+          <input
+            class="form-control"
+            type="email"
+            [(ngModel)]="regModel.email"
+            name="email"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="example-mobile-input" class="col-2 col-form-label"
+          >Mobile</label
+        >
+        <div class="col-10">
+          <input
+            class="form-control"
+            type="text"
+            [(ngModel)]="regModel.mobile"
+            name="mobile"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="example-password-input" class="col-2 col-form-label"
+          >Password</label
+        >
+        <div class="col-10">
+          <input
+            class="form-control"
+            type="password"
+            [(ngModel)]="regModel.password"
+            name="password"
+          />
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success">{{ submitType }}</button>
+      <button type="submit" class="btn btn-primary" (click)="onCancel()">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>

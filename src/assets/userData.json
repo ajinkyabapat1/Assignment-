@@ -1,0 +1,44 @@
+[
+  {
+    "firstName": "Ajinkya",
+    "lastName": "Bapat",
+    "email": "aj@gmail.com",
+    "password": "ajinkya123",
+    "mobile":"9898989898"
+  },
+  {
+    "firstName": "John",
+    "lastName": "Cena",
+    "email": "john@gmail.com",
+    "password": "johnWWE",
+    "mobile":"9797989898"
+  },
+  {
+    "firstName": "Peter",
+    "lastName": "Paker",
+    "email": "peter@gmail.com",
+    "password": "peter123",
+    "mobile":"9897587898"
+  },
+  {
+    "firstName": "Sudhanshu",
+    "lastName": "Tayde",
+    "email": "sudhannash@gmail.com",
+    "password": "sudha123",
+    "mobile":"9498975678"
+  },
+  {
+    "firstName": "Tony",
+    "lastName": "Stark",
+    "email": "tony@gmail.com",
+    "password": "tony123",
+    "mobile":"9289876754"
+  },
+  {
+    "firstName": "Jonathan",
+    "lastName": "Livingston",
+    "email": "johny@gmail.com",
+    "password": "johny123",
+    "mobile":"9185587654"
+  }
+]

@@ -1,0 +1,88 @@
+mat-form-field {
+  width: 300px;
+}
+
+
+.login-container {
+  text-align: center;
+}
+
+.login-form {
+  margin-left: 350px;
+  width: 40%;
+  margin-top: 20px;
+  border-style: outset;
+}
+
+.input {
+  margin: 10px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.login-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.cancelbtn {
+  padding: 10px 18px;
+  background-color: #f44336
+}
+
+.forgotpass {
+  margin-left: 10px;
+}
+
+.cancelbtn .login-button :hover {
+  opacity: 0.8;
+}
+
+.btncont {
+  padding: 10px
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 12px 0 6px 0;
+  border-radius: 50%;
+}
+
+.invalid-user {
+  display: block
+}
+
+.jumbotron {
+   background-color: brown;
+   color: white;
+}
+  
+
+
+/* Ajinkya CSS */
+
+.is-invalid {
+  border-left: 5px solid red !important;  
+}
+
+.is-valid{
+  border-left: 5px solid green !important;
+}
+
+.icon
+{
+  color:blueviolet !important;
+  height: 20px !important;
+  width: 30px !important;
+}
